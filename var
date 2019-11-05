@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<b>Гараев Алексей ИУ4-12, Вариант №10</b>
+<?php
+	echo "<hr>№1<h1>";
+	for ($x=0; $x<100; $x++){
+		for ($y=0; $y<100; $y++){
+			$array[$x][$y] = "$x-$y";
+		}
+	}
+	echo '<table border="1px">';
+	for ($x=0; $x<100; $x++){
+		echo "<tr>";
+		for ($y=0; $y<100; $y++){
+			echo "<td>";
+			echo  "$x-$y";
+			echo "</td>";
+		}
+		echo "</tr>";
+	}
+	echo '</table>';
+?>
+<form action="" method="get">
+	<p>a:<input type="text" name="na"></p>
+	<p>b:<input type="text" name="nb"></p>
+	<p>Тип арифметической операции
+	<select name="matop">
+		<option>+</option>
+		<option>-</option>
+		<option>*</option>
+		<option>/</option>
+	</select>
+	<p> Если не работает <br>
+		<input type="text" name="matprov">
+	</p>
+	<button type="submit"> Принять</button>
+	</p>
+</form>
+<?php
+	echo "<hr>№2<h1>";
+	$a = $_GET['na'];
+	$b = $_GET['nb'];
+	$matop = $_GET['matop'];
+	switch ($matop) {
+		case '*':
+			$a = $a*$b;
+			echo "a*b=$a";
+			break;
+		case '+':
+			$a = $a+$b;
+			echo "a+b=$a";
+			break;
+		case '-':
+			$a = $a-$b;
+			echo "a-b=$a";
+			break;
+		case '*':
+			$a = $a/$b;
+			echo "a/b=$a";
+			break;
+		default:
+			$matprov = $_GET['matprov'];
+			switch ($matop) {
+				case '*':
+					$a = $a*$b;
+					echo "a*b=$a";
+					break;
+				case '+':
+					$a = $a+$b;
+					echo "a+b=$a";
+					break;
+				case '-':
+					$a = $a-$b;
+					echo "a-b=$a";
+					break;
+				case '*':
+					$a = $a/$b;
+					echo "a/b=$a";
+					break;
+			break;
+			}
+		}
+?>
+</body>
+</html>
